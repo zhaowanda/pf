@@ -5,7 +5,13 @@ import (
 	"log"
 	"io"
 	yaml "github.com/wendal/goyaml2"
-	"config"
+	"github.com/zhaowanda/pf/config"
+
+)
+
+var (
+	execDirAbsPath, _ = os.Getwd()
+	YamlConfigure, Err   = InitYamlConfig(execDirAbsPath + "/src/application.yaml")
 )
 
 // 解析 yaml 配置文件

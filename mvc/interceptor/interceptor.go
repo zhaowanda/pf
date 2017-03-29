@@ -54,8 +54,8 @@ func Register(name string, interceptor InterceptorBean) {
 
 // 批量注册interceptor
 func Registers(interceptors map[string]InterceptorBean) {
-	for key, value := range interceptors {
-		Register(key, value)
+	for key, _ := range interceptors {
+		Register(key, interceptors[key])
 	}
 }
 
